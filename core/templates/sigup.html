@@ -1,0 +1,45 @@
+{% extends 'menu.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+
+    
+
+    <main class="container mb-5">
+        <div class="row">
+            <div class="col-md-5 offset-md-3">
+
+                <p></p>
+
+                <form method="POST" class="card card-body" autocomplete="off">
+                    
+                    {% csrf_token %}
+
+                    <h2 class="text-center">Cadastrar</h2>
+
+                    {% bootstrap_messages %}
+
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Nome</label>
+                        <input type="text" name="username" class="form-control" id="username">
+                    </div>  
+
+                    <div class="mb-3">
+                        <label for="password1" class="form-label">Senha</label>
+                        <input type="password" name="password1" class="form-control" id="password1">
+                    </div> 
+                    
+                    <div class="mb-3">
+                        <label for="password2" class="form-label">Confirme Senha</label>
+                        <input type="password" name="password2" class="form-control" id="password2">
+                    </div> 
+                    
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    
+                </form>
+
+            </div>
+        </div>  
+    </main>
+
+{% endblock %}
